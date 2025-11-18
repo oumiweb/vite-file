@@ -1,0 +1,135 @@
+@use "../global" as *;
+
+
+.button {
+  display: none;
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  display: none;
+}
+
+
+.hamburger__line {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 28px;
+  height: 2px;
+
+  -webkit-transition: inherit;
+  transition: inherit;
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $text-white;
+    content: '';
+    -webkit-transition: inherit;
+    transition: inherit;
+
+  }
+}
+
+.hamburger__line::before {
+  top: -5px;
+}
+
+.hamburger__line::after {
+  top: 5px;
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line {
+  background-color: transparent;
+
+  &::before,
+  &::after {
+    top: 0;
+    background-color: $text-white;
+  }
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.hamburger[aria-expanded="true"] .hamburger__line::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.hamburger-text {
+  position: absolute;
+  top: -20;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  font-size: 10px;
+  color: $text-white;
+}
+
+.hamburger[aria-expanded="true"] .hamburger-text {
+  display: none;
+}
+
+
+@include mq (md) {
+  .hamburger {
+    display: inline-block;
+  }
+
+  .header-navFixed {
+    .hamburger {
+      top: 15px;
+    }
+
+    .hamburger__line {
+      &::before,
+      &::after {
+        background-color: $text-color;
+      }
+    }
+
+    .hamburger-text {
+      color: $text-color;
+    }
+
+    .hamburger[aria-expanded="true"] .hamburger__line {
+      background-color: transparent;
+    
+      &::before,
+      &::after {
+        top: 0;
+        background-color: $text-color;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,59 @@
+@use 'sass:math';
+@use 'sass:map'; 
+// color
+$text-color: #333333;
+$d-green:#075735;
+$button-text-color: #00331D;
+$background: #4b4b4b;
+$green: #00BA6B;
+$text-white: #ffffff;
+$bg-color: #F7FFFC;
+$orange: #ff8a00;
+$num-color:#CBF7E6;
+
+
+// font-family
+$font: "Noto Sans JP", "Orbitron" , "Roboto Condenesed" ,sans-serif;
+
+// ホバー
+$transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+// レイアウト
+$pc-camp: 1440px; //pcカンプの幅
+$sp-camp: 375; //spカンプの幅
+$pc-padding: 30;
+$pc-inner-sum: 1380; //1440-30-30
+
+//=====================================
+//    関数
+//=====================================
+@function rem($arg) {
+    @return calc($arg / 16 * 1rem);
+}
+
+@function px($arg) {
+    @return calc($arg * 1px);
+}
+
+@function em($px, $base: 16) {
+  @return math.div($px, $base) * 1em;
+}
+
+// ================================================
+  // メディアクエリとブレークポイントの設定
+// ================================================
+//ブレイクポイント(デザインによって異なる)
+$breakpoints: (
+  sm: 550,
+  md: 768,
+  lg: 1024,
+  xl: 1400,
+);
+
+ $mediaquerys: (
+  sm: "screen and (max-width: #{map.get($breakpoints,'sm')}px)",
+  md: "screen and (max-width: #{map.get($breakpoints,'md')}px)",
+  lg: "screen and (max-width: #{map.get($breakpoints,'lg')}px)",
+  xl: "screen and (max-width: #{map.get($breakpoints,'xl')}px)",
+);
+

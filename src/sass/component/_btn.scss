@@ -1,0 +1,17 @@
+@use "../global" as *;
+
+.btn {
+  display: inline-block;
+  padding: em(20 , 16) em(39 , 16);
+  border-radius: rem(25);
+  color: $text-white;
+  font-weight: 700;
+  white-space: nowrap;
+  background-color: pink;
+  font-size:  rem(30);
+  cursor: pointer;
+
+  @include mq("md"){ 
+  font-size:  rem(20);
+  }
+}

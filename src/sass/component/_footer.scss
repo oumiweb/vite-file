@@ -1,0 +1,82 @@
+@use "../global" as *;
+
+.footer {
+  background-color: #F1F1F1;
+  padding-block: rem(53) rem(77);
+}
+
+.footer__inner {
+  display: flex;
+  padding: 0 clamp(1rem, -1.704rem + 11.5vw, 7.5rem);
+  max-width: rem(1280);
+  margin: 0 auto;
+
+  @include mq("md"){ 
+  flex-direction: column;
+  text-align: center;
+  }
+}
+.footer__logo {
+  padding:rem(15) rem(26);
+}
+
+.footer__logo-area {
+  @include mq("md"){
+    margin-top: rem(50);
+    order: 2;
+    }
+}
+
+
+.footer__copyright {
+  font-size: 12px;
+  font-weight: 400;
+}
+.footer__nav {
+  margin-left:  rem(41);
+
+}
+
+.footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 36px;
+
+  a {
+    font-weight: 700;
+    display: inline-block;
+    white-space: nowrap; /* 改行させない */
+    padding-block: rem(15);
+  }
+
+  @include mq("md"){ 
+  flex-direction: column;
+  gap: 0;
+  }
+}
+
+
+.footer__action {
+  display: flex;
+  flex-direction: column;
+  margin-left: clamp(1rem, 5vw, 4.6875rem);
+
+  @include mq("lg"){ 
+    display: none;
+    }
+
+  .btn--orange {
+    margin-left: 0;
+    margin-top:  rem(19);
+  }
+}
+
+.footer__list--second {
+  padding-top: rem(19);
+
+  @include mq("lg"){ 
+  padding-top: 0;
+  }
+}
+
+

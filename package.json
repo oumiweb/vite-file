@@ -1,0 +1,18 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "imagemin-webp": "^8.0.0",
+    "sass": "^1.94.0",
+    "sass-embedded": "^1.93.3",
+    "vite": "^7.2.2",
+    "vite-plugin-imagemin": "^0.6.1"
+  }
+}

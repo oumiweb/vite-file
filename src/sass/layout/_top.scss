@@ -1,0 +1,43 @@
+@use "../global" as *;
+
+
+.mamas__heading {
+  font-size: rem(70);
+  font-weight: 700;
+
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.mamas__description {
+  margin-top: rem(24);
+  margin-left: rem(8);
+  font-size: rem(40);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+
+  @include mq(md) {
+    font-size: rem(16);
+  }
+
+}
+
+.mamas__wrap {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.mamas__btn {
+  margin-top: rem(16);
+}
+
+.mamas__img {
+  width: rem(600);
+
+  @include mq(md) {
+    width: rem(300);
+  }
+}

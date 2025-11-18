@@ -1,0 +1,89 @@
+@use "../global" as *;
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: $font;
+  color: $text-color;
+}
+
+html,
+body {
+  min-height: 100dvh;
+  /* iOSでの高さズレを防ぐ */
+}
+
+
+// img {
+//   width: 100%;
+//   height: auto;
+//   vertical-align: middle;
+// }
+
+picture {
+  vertical-align: middle;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  transition: $transition;
+  color: inherit;
+
+  // PCやマウス操作ができるデバイスのみホバー適用
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.6;
+      filter: brightness(90%);
+    }
+  }
+
+  // タッチデバイス（スマホ・タブレット）ではホバーを無効化
+  @media (hover: none) {
+    &:hover {
+      opacity: 1;
+      filter: none;
+      cursor: default;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  background: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  color: $text-color;
+}
+
+picture,
+img,
+a {
+  display: inline-block;
+}
+
+video,
+svg {
+  width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}

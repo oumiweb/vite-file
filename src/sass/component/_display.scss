@@ -1,0 +1,14 @@
+@use "../global" as *;
+.u-pc {
+  display: block;
+  @include mq(sm) {
+    display: none !important;
+  }
+}
+
+.u-sp {
+  display: none;
+  @include mq(md) {
+    display: block !important;
+  }
+}
